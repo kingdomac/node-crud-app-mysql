@@ -1,0 +1,54 @@
+<div class="row mb-4">
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First name"
+                aria-label="First name" value="{{this.first_name}}">
+            <label for="first_name">First Name</label>
+        </div>
+        {{#if errors.0.first_name }}
+        {{> error message=errors.0.first_name }}
+        {{/if }}
+    </div>
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" name="last_name" value="{{this.last_name}}" class="form-control" placeholder="Last name"
+                aria-label="Last name">
+            <label for="first_name">Last Name</label>
+        </div>
+        {{#if errors.0.last_name }}
+        {{> error message=errors.0.last_name }}
+        {{/if }}
+    </div>
+
+</div>
+
+
+
+<div class="row mb-4">
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="email" id="email" name="email" value="{{this.email}}" class="form-control"
+                placeholder="Email address" aria-label="Email address">
+            <label for="email">Email</label>
+        </div>
+        {{#if errors.0.email }}
+        {{> error message=errors.0.email }}
+        {{/if }}
+    </div>
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="phone" id="phone" name="phone" value="{{this.phone}}" class="form-control"
+                placeholder="Phone number" aria-label="Phone number">
+            <label for="phone">Phone</label>
+        </div>
+        {{#if errors.0.phone }}
+        {{> error message=errors.0.phone }}
+        {{/if }}
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col">
+        <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+        <textarea class="form-control" name="comments" rows="3">{{this.comments}}</textarea>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/users">Users</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Edit User</li>
+    </ol>
+</nav>
+{{> message success=success error=error}}
+<form class="grid row-g-3 needs-validation" method="POST" action="/users/update">
+    {{#with user }}
+    <input type="hidden" name="id" value="{{this.id}}">
+    {{> user-form errors=@root.errors}}
+    {{/with }}
+    <input type="hidden" name="_method" value="PUT">
+    <div class="row">
+        <div class="col d-grid">
+            <button class="btn-primary" type="submit">Save</button>
+        </div>
+    </div>
+</form>
